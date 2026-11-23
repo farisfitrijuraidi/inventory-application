@@ -1,0 +1,32 @@
+{
+  "name": "inventory-application",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "node --env-file-if-exists=.env --watch app.js"
+  },
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/farisfitrijuraidi/inventory-application.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/farisfitrijuraidi/inventory-application/issues"
+  },
+  "homepage": "https://github.com/farisfitrijuraidi/inventory-application#readme",
+  "dependencies": {
+    "ejs": "^7.0.2",
+    "express": "^5.3.0",
+    "express-validator": "^7.3.2",
+    "pg": "^8.23.1"
+  }
+}
