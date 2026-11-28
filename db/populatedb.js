@@ -19,9 +19,9 @@ CREATE TABLE IF NOT EXISTS developer (
 CREATE TABLE IF NOT EXISTS game (
     id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     name VARCHAR (255) NOT NULL UNIQUE,
-    price_RM NUMERIC(10,2) NOT NULL CHECK (price_RM >= 0),
+    price_rm NUMERIC(10,2) NOT NULL CHECK (price_RM >= 0),
     release_year INTEGER NOT NULL CHECK (release_year >= 1980),
-    rating_IGN NUMERIC(3,1) CHECK (rating_IGN BETWEEN 1 AND 10),
+    rating_ign NUMERIC(3,1) CHECK (rating_IGN BETWEEN 1 AND 10),
     stock_amount INTEGER NOT NULL CHECK (stock_amount >= 0),
     genre_id INTEGER NOT NULL REFERENCES genre(id),
     developer_id INTEGER NOT NULL REFERENCES developer(id)
@@ -43,7 +43,7 @@ VALUES
     ('Rockstar Games', 'USA') 
     ON CONFLICT (name) DO NOTHING;
 
-INSERT INTO game (name, price_RM, release_year, rating_IGN, stock_amount, genre_id, developer_id) 
+INSERT INTO game (name, price_rm, release_year, rating_ign, stock_amount, genre_id, developer_id) 
 VALUES 
     ('Grand Theft Auto VI', 339, 2026, 10.0, 10, (SELECT id FROM genre WHERE label = 'Action-Adventure'), (SELECT id FROM developer WHERE name = 'Rockstar Games')) ON CONFLICT (name) DO NOTHING;
 `;
